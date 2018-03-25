@@ -29,7 +29,7 @@ public class VideoApp {
 
 	public static void main(String[] args) throws IOException, InsufficientBitsLeftException {
 		String base = "bunny";
-		String filename="/Users/kmp/tmp/" + base + ".450p.yuv";
+		String filename="/Users/ijohnnyh/Documents/School/Classwork/COMP590/A1VideoFiles/" + base +"/" + base + ".450p.yuv";
 		File file = new File(filename);
 		int width = 800;
 		int height = 450;
@@ -68,7 +68,7 @@ public class VideoApp {
 
 		InputStream message = new FileInputStream(file);
 
-		File out_file = new File("/Users/kmp/tmp/" + base + "-compressed.dat");
+		File out_file = new File("/Users/ijohnnyh/Documents/School/Classwork/COMP590/A1VideoFiles/" +base +"/" +base + "-compressed.dat");
 		OutputStream out_stream = new FileOutputStream(out_file);
 		BitSink bit_sink = new OutputStreamBitSink(out_stream);
 
@@ -88,7 +88,7 @@ public class VideoApp {
 		out_stream.close();
 
 		BitSource bit_source = new InputStreamBitSource(new FileInputStream(out_file));
-		OutputStream decoded_file = new FileOutputStream(new File("/Users/kmp/tmp/" + base + "-decoded.dat"));
+		OutputStream decoded_file = new FileOutputStream(new File("/Users/ijohnnyh/Documents/School/Classwork/COMP590/A1VideoFiles/"+base+"/"+base +"-decoded.dat"));
 
 		//		SymbolDecoder decoder = new HuffmanDecoder(encoder.getCodeMap());
 		SymbolDecoder decoder = new ArithmeticDecoder(model);
