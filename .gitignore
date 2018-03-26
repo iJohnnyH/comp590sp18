@@ -1,3 +1,5 @@
 *.class
 
 .idea/
+
+__pycache__/
